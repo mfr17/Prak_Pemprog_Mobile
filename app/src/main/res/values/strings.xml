@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Daftar Matakuliah</string>
+    <string name="matakuliah1">Pemprogramam Berbasis Mobile</string>
+    <string name="matakuliah2">Pemrograman Lanjut</string>
+    <string name="matakuliah3">Fisika Dasar</string>
+    <string name="matakuliah4">Sistem Operasi</string>
+    <string name="matakuliah5">Algoritma dan Struktur Data</string>
+</resources>
