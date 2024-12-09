@@ -4,11 +4,13 @@ import android.app.Application
 import id.mfr17.bookshelf.data.AppContainer
 import id.mfr17.bookshelf.data.DefaultAppContainer
 
+// Kelas BookShelfApplication yang mewarisi Application
 class BookShelfApplication: Application() {
-    lateinit var container: AppContainer // Corrected 'lateinit' instead of 'lateint'
-
+    // Kontainer yang digunakan untuk menyediakan dependensi
+    lateinit var container: AppContainer
+    // Fungsi yang dipanggil saat aplikasi dijalankan
     override fun onCreate() {
         super.onCreate()
-        container = DefaultAppContainer() // Ensure container is initialized here
+        container = DefaultAppContainer()
     }
 }

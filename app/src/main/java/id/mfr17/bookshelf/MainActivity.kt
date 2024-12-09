@@ -13,7 +13,9 @@ import id.mfr17.bookshelf.ui.BookShelfApp
 import id.mfr17.bookshelf.ui.theme.BookShelfTheme
 
 class MainActivity : ComponentActivity() {
+    // Kontainer yang digunakan untuk menyediakan dependensi
     private lateinit var bookShelfRepository: BookShelfRepository
+    // Fungsi yang dipanggil saat aktivitas dijalankan
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,11 +23,11 @@ class MainActivity : ComponentActivity() {
         bookShelfRepository = app.container.bookShelfRepository
         setContent {
             BookShelfTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    // Menampilkan BookShelfApp dengan menyediakan dependensi BookShelfRepository
                     BookShelfApp(bookShelfRepository)
                 }
             }

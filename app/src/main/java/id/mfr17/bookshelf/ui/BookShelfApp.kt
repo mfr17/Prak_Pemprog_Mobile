@@ -17,13 +17,17 @@ import id.mfr17.bookshelf.ui.screen.BookViewModel
 import id.mfr17.bookshelf.ui.screen.HomeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
+// Fungsi untuk menampilkan BookShelfApp
 @Composable
 fun BookShelfApp(bookShelfRepository: BookShelfRepository) {
+    // Scaffold untuk menampilkan layout utama aplikasi
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        // TopBar untuk menampilkan judul aplikasi
         topBar = {
             TopAppBar(
                 title = {
+                    // Menampilkan judul aplikasi dari string resources
                     Text(
                         stringResource(R.string.app_name),
                         style = MaterialTheme.typography.headlineMedium
@@ -32,12 +36,16 @@ fun BookShelfApp(bookShelfRepository: BookShelfRepository) {
             )
         }
     ) {
+        // Surface untuk menampilkan konten utama aplikasi
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
+            // ViewModel untuk BookShelf
             val bookViewModel: BookViewModel = viewModel(factory = BookViewModel.provideFactory(bookShelfRepository))
+            // Menampilkan konten utama aplikasi dari HomeScreen
             HomeScreen(
+                // State dari ViewModel
                 bookShelfUiState = bookViewModel.bookShelfUiState,
                 retryAction = bookViewModel::getBooks,
                 contentPadding = it

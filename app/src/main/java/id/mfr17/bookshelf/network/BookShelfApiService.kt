@@ -5,8 +5,10 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface BookShelfApiService {
+    // Path ke endpoint yang akan digunakan
     @GET("volumes")
     suspend fun getBooks(
+        // Query parameter yang akan dimasukkan ke URL
         @Query("q") query: String,
-    ): BooksResponse
+    ): BooksResponse // Tipe data yang diharapkan dari respons
 }
